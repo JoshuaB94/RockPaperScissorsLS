@@ -1,0 +1,24 @@
+{
+  "name": "rockpaperscissorsls",
+  "version": "1.0.0",
+  "description": "Week Three Pair Programming for Rock Paper Scissors Lizard Spock",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaB94/rockPaperScissorsLS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoshuaB94/rockPaperScissorsLS/issues"
+  },
+  "homepage": "https://github.com/JoshuaB94/rockPaperScissorsLS#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
