@@ -3,10 +3,10 @@ const { GamePlayer } = require("./player");
 class Ai extends GamePlayer{
     constructor(name){
         super(name);
-        this.handGestures = Math.floor(Math.random() * this.handGestures.length) + 1;
+        this.name = "Rob the Robot"
     }
-
-randomizeHandGestures(){
-    console.log(`3...2..1.${this.handGestures}`);
 }
+
+module.exports = {
+    Robot: Ai,
 }
