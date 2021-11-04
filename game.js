@@ -24,37 +24,35 @@ class Game {
 
         let playerSelection = prompt();
         let playerSelectedHandGesture;
-        if(playerSelection == 1){
+
+            if(playerSelection == 1){
                 playerSelectedHandGesture = this.playerOne.handGestures[0];
                 console.log(playerSelectedHandGesture)
             }
-        else if(playerSelection == 2) {
+            else if(playerSelection == 2) {
                 playerSelectedHandGesture = this.playerOne.handGestures[1];
-                console.log("Paper")
+                console.log(playerSelectedHandGesture)
             }
-        else if(playerSelection == 3) {
+            else if(playerSelection == 3) {
                 playerSelectedHandGesture = this.playerOne.handGestures[2];
-                console.log("Scissors")
+                console.log(playerSelectedHandGesture)
             }
-        else if(playerSelection == 4) {
+            else if(playerSelection == 4) {
                 playerSelectedHandGesture = this.playerOne.handGestures[3];
-                console.log("Lizard")
-            }
-        else if(playerSelection == 5) {
+                console.log(playerSelectedHandGesture)
+                }
+            else if(playerSelection == 5) {
                 playerSelectedHandGesture = this.playerOne.handGestures[4];
-                console.log("Spock")
+                console.log(playerSelectedHandGesture)
             } 
-        else {
+            else {
                 console.log("Invalid selection, please try again!");
             }
-
-            
-        
-    }
+        }
     runGame(){
         this.welcomeDisplay();
         this.runRPSLS();
-    }
+        }
 }
 module.exports = {
     Game: Game,
