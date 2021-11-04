@@ -35,8 +35,13 @@ class Game {
         console.log(`${this.playerOne.name} vs ${this.playerTwo.name}... BEGIN!`);
         
         while(this.playerOne.pointTally < 3 && this.playerTwo.pointTally < 3){
+            // selectHandGesture method calls will RETURN the strings for each gesture
             this.playerOne.selectHandGesture();
             this.playerTwo.selectHandGesture();
+
+            // compareGestures(playerOneChoice, playerTwoChoice)
+            // compare the gestures and assign point to winner player
+            // if (playerOneChoice === "Rock" && playerTwoChoice === "Paper") ---> this.playerOne.pointTally++
 
             console.log("Who won the round? Press 1 for player one and 2 for player two");
             let userTally = prompt();
