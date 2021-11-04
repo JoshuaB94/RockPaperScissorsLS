@@ -22,37 +22,51 @@ class Game {
         console.log(`${this.playerOne.name} vs ${this.playerTwo.name}... BEGIN!`);
         console.log("Please enter your gesture selection: \n 1 - Rock, 2 - Paper, 3 - Scissors, 4 - Lizard, 5 - Spock.");
 
-        let playerSelection = prompt();
+        let playerOneSelection = prompt()
+        let playerTwoSelection = prompt()
         let playerSelectedHandGesture;
 
-            if(playerSelection == 1){
-                playerSelectedHandGesture = this.playerOne.handGestures[0];
-                console.log(playerSelectedHandGesture)
-            }
-            else if(playerSelection == 2) {
-                playerSelectedHandGesture = this.playerOne.handGestures[1];
-                console.log(playerSelectedHandGesture)
-            }
-            else if(playerSelection == 3) {
-                playerSelectedHandGesture = this.playerOne.handGestures[2];
-                console.log(playerSelectedHandGesture)
-            }
-            else if(playerSelection == 4) {
-                playerSelectedHandGesture = this.playerOne.handGestures[3];
-                console.log(playerSelectedHandGesture)
-                }
-            else if(playerSelection == 5) {
-                playerSelectedHandGesture = this.playerOne.handGestures[4];
-                console.log(playerSelectedHandGesture)
-            } 
-            else {
-                console.log("Invalid selection, please try again!");
-            }
-        }
+        selectHandGesture(playerOneSelection, this.playerOne);
+        selectHandGesture(playerTwoSelection, this.playerTwo);
+
     runGame(){
         this.welcomeDisplay();
         this.runRPSLS();
         }
+}
+
+function selectHandGesture(playerSelection,player){
+    let playerSelectedHandGesture;
+    if(playerSelection == 1){
+        playerSelectedHandGesture = player.handGestures[0];
+        console.log(playerSelectedHandGesture);
+        return playerSelectedHandGesture
+    }
+    else if(playerSelection == 2) {
+        playerSelectedHandGesture = player.handGestures[1];
+        console.log(playerSelectedHandGesture);
+        return playerSelectedHandGesture
+    }
+    else if(playerSelection == 3) {
+        playerSelectedHandGesture = player.handGestures[2];
+        console.log(playerSelectedHandGesture);
+        return playerSelectedHandGesture
+        }
+    else if(playerSelection == 4) {
+        playerSelectedHandGesture = player.handGestures[3];
+        console.log(playerSelectedHandGesture);
+        return playerSelectedHandGesture
+        }
+    else if(playerSelection == 5) {
+        playerSelectedHandGesture = player.handGestures[4];
+        console.log(playerSelectedHandGesture);
+        return playerSelectedHandGesture
+    } 
+    else {
+        console.log("Invalid selection, please try again!");
+        selectHandGesture()
+    }
+    // this.runRPSLS();
 }
 module.exports = {
     Game: Game,
