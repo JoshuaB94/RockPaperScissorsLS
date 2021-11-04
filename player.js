@@ -6,8 +6,18 @@ class Player {
         this.handGestures = ['Rock','Paper','Scissors','Lizard','Spock'];
         this.pointTally = 0;
     }
+
+    pointChange(){
+        this.pointTally = this.pointTally + 1;
+        console.log(this.pointTally);
+        return this.pointTally
+    }
 }
-//Create 
+let victor = new Player;
+victor.pointChange();
+victor.pointChange();
+victor.pointChange();
+
 module.exports = {
     GamePlayer: Player
 }

@@ -20,15 +20,35 @@ class Game {
 
     runRPSLS(){
         console.log(`${this.playerOne.name} vs ${this.playerTwo.name}... BEGIN!`);
-        console.log("Please enter your gesture selection: \n 1 - Rock, 2 - Paper, 3 - Scissors, 4 - Lizard, 5 - Spock.");
+        // console.log("Please enter your gesture selection: \n 1 - Rock, 2 - Paper, 3 - Scissors, 4 - Lizard, 5 - Spock.");
 
-        let playerOneSelection = prompt()
-        let playerTwoSelection = prompt()
-        let playerSelectedHandGesture;
+        // let playerOneSelection = prompt();
+        // let playerTwoSelection = prompt();
 
-        selectHandGesture(playerOneSelection, this.playerOne);
-        selectHandGesture(playerTwoSelection, this.playerTwo);
-    }
+        while(this.playerOne.pointTally < 3 && this.playerTwo.pointTally < 3){
+            console.log("Please enter your gesture selection: \n 1 - Rock, 2 - Paper, 3 - Scissors, 4 - Lizard, 5 - Spock.");
+
+            let playerOneSelection = prompt();
+            let playerTwoSelection = prompt();
+            selectHandGesture(playerOneSelection, this.playerOne);
+            selectHandGesture(playerTwoSelection, this.playerTwo);
+
+            console.log("Who won the round? Press 1 for player one and 2 for player two");
+            let userTally = prompt();
+            if(userTally == "1"){
+                this.playerOne.pointChange();
+            }
+            else if(userTally == "2"){
+                this.playerTwo.pointChange();
+            }
+            else {
+                console.log("Please select either 1 or 2.  Try again!");
+
+            }
+        }
+    //     selectHandGesture(playerOneSelection, this.playerOne);
+    //     selectHandGesture(playerTwoSelection, this.playerTwo);
+     }
 
     runGame(){
         this.welcomeDisplay();
