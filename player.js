@@ -7,12 +7,6 @@ class Player {
         this.pointTally = 0;
     }
 
-    // pointChange(){
-    //     this.pointTally = this.pointTally++;
-    //     console.log(this.pointTally);
-    //     return this.pointTally
-    // }
-
     selectHandGesture(){
         console.log("Please enter your gesture selection: \n 1 - Rock, 2 - Paper, 3 - Scissors, 4 - Lizard, 5 - Spock.");
         let playerSelectedHandGesture = prompt();
