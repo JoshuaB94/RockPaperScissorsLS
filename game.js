@@ -35,7 +35,6 @@ class Game {
         console.log(`${this.playerOne.name} vs ${this.playerTwo.name}... BEGIN!`);
         
         while(this.playerOne.pointTally < 3 && this.playerTwo.pointTally < 3){
-            // console.log("Please enter your gesture selection: \n 1 - Rock, 2 - Paper, 3 - Scissors, 4 - Lizard, 5 - Spock.");
             this.playerOne.selectHandGesture();
             this.playerTwo.selectHandGesture();
 
