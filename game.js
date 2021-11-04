@@ -33,14 +33,11 @@ class Game {
 
     runRPSLS(){
         console.log(`${this.playerOne.name} vs ${this.playerTwo.name}... BEGIN!`);
-
+        
         while(this.playerOne.pointTally < 3 && this.playerTwo.pointTally < 3){
-            console.log("Please enter your gesture selection: \n 1 - Rock, 2 - Paper, 3 - Scissors, 4 - Lizard, 5 - Spock.");
-
-            let playerOneSelection = prompt();
-            let playerTwoSelection = prompt();
-            selectHandGesture(playerOneSelection, this.playerOne);
-            selectHandGesture(playerTwoSelection, this.playerTwo);
+            // console.log("Please enter your gesture selection: \n 1 - Rock, 2 - Paper, 3 - Scissors, 4 - Lizard, 5 - Spock.");
+            this.playerOne.selectHandGesture();
+            this.playerTwo.selectHandGesture();
 
             console.log("Who won the round? Press 1 for player one and 2 for player two");
             let userTally = prompt();
@@ -69,39 +66,6 @@ class Game {
         this.runRPSLS();
         this.declareWinner();
         }
-}
-
-function selectHandGesture(playerSelection,player){
-    let playerSelectedHandGesture;
-    if(playerSelection == 1){
-        playerSelectedHandGesture = player.handGestures[0];
-        console.log(playerSelectedHandGesture);
-        return playerSelectedHandGesture
-    }
-    else if(playerSelection == 2) {
-        playerSelectedHandGesture = player.handGestures[1];
-        console.log(playerSelectedHandGesture);
-        return playerSelectedHandGesture
-    }
-    else if(playerSelection == 3) {
-        playerSelectedHandGesture = player.handGestures[2];
-        console.log(playerSelectedHandGesture);
-        return playerSelectedHandGesture
-        }
-    else if(playerSelection == 4) {
-        playerSelectedHandGesture = player.handGestures[3];
-        console.log(playerSelectedHandGesture);
-        return playerSelectedHandGesture
-        }
-    else if(playerSelection == 5) {
-        playerSelectedHandGesture = player.handGestures[4];
-        console.log(playerSelectedHandGesture);
-        return playerSelectedHandGesture
-    } 
-    else {
-        console.log("Invalid selection, please try again!");
-        selectHandGesture()
-    }
 }
 
 module.exports = {
