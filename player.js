@@ -19,27 +19,27 @@ class Player {
         if(playerSelectedHandGesture == 1){
             playerSelectedHandGesture = this.handGestures[0];
             console.log(playerSelectedHandGesture);
-            return playerSelectedHandGesture
+            return playerSelectedHandGesture[0]
         }
         else if(playerSelectedHandGesture == 2) {
             playerSelectedHandGesture = this.handGestures[1];
             console.log(playerSelectedHandGesture);
-            return playerSelectedHandGesture
+            return playerSelectedHandGesture[1]
         }
         else if(playerSelectedHandGesture == 3) {
             playerSelectedHandGesture = this.handGestures[2];
             console.log(playerSelectedHandGesture);
-            return playerSelectedHandGesture
+            return playerSelectedHandGesture[2]
             }
         else if(playerSelectedHandGesture == 4) {
             playerSelectedHandGesture = this.handGestures[3];
             console.log(playerSelectedHandGesture);
-            return playerSelectedHandGesture
+            return playerSelectedHandGesture[3]
             }
         else if(playerSelectedHandGesture == 5) {
             playerSelectedHandGesture = this.handGestures[4];
             console.log(playerSelectedHandGesture);
-            return playerSelectedHandGesture
+            return playerSelectedHandGesture[4]
         } 
         else {
             console.log("Invalid selection, please try again!");
