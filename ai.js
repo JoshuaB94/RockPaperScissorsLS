@@ -8,6 +8,7 @@ class Ai extends GamePlayer{
     selectHandGesture(){
         let aiSelection = Math.floor(Math.random() * this.handGestures.length);
         console.log(this.handGestures[aiSelection]);
+        return aiSelection;
     }
 }   
 

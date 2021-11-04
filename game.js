@@ -38,9 +38,6 @@ class Game {
             let playerOneGesture = this.playerOne.selectHandGesture();
             let playerTwoGesture = this.playerTwo.selectHandGesture();
             this.compareGestures(playerOneGesture, playerTwoGesture)
-            // compareGestures(playerOneChoice, playerTwoChoice)
-            // compare the gestures and assign point to winner player
-            // if (playerOneChoice === "Rock" && playerTwoChoice === "Paper") ---> this.playerOne.pointTally++   
         }
     }
 
