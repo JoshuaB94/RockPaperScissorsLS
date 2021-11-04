@@ -13,10 +13,6 @@ class Player {
         return this.pointTally
     }
 }
-let victor = new Player;
-victor.pointChange();
-victor.pointChange();
-victor.pointChange();
 
 module.exports = {
     GamePlayer: Player
