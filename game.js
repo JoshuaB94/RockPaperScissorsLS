@@ -28,6 +28,7 @@ class Game {
 
         selectHandGesture(playerOneSelection, this.playerOne);
         selectHandGesture(playerTwoSelection, this.playerTwo);
+    }
 
     runGame(){
         this.welcomeDisplay();
@@ -66,8 +67,8 @@ function selectHandGesture(playerSelection,player){
         console.log("Invalid selection, please try again!");
         selectHandGesture()
     }
-    // this.runRPSLS();
 }
+
 module.exports = {
     Game: Game,
 }
