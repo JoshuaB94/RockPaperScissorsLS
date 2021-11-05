@@ -36,26 +36,31 @@ class Game {
         
         while(this.playerOne.pointTally < 3 && this.playerTwo.pointTally < 3){
             // selectHandGesture method calls will RETURN the strings for each gesture
-            this.playerOne.selectHandGesture();
-            this.playerTwo.selectHandGesture();
+            let playerOneChoice = this.playerOne.selectHandGesture();
+            let playerTwoChoice = this.playerTwo.selectHandGesture();
+            if (playerOneChoice === "Rock" && playerTwoChoice === "Lizard"){
+                this.playerOne.pointTally = this.playerOne.pointTally++;
+                return;
+            }
+        }
 
             // compareGestures(playerOneChoice, playerTwoChoice)
             // compare the gestures and assign point to winner player
             // if (playerOneChoice === "Rock" && playerTwoChoice === "Paper") ---> this.playerOne.pointTally++
 
-            console.log("Who won the round? Press 1 for player one and 2 for player two");
-            let userTally = prompt();
-            if(userTally == "1"){
-                this.playerOne.pointChange();
-            }
-            else if(userTally == "2"){
-                this.playerTwo.pointChange();
-            }
-            else {
-                console.log("Please select either 1 or 2.  Try again!");
+        //     console.log("Who won the round? Press 1 for player one and 2 for player two");
+        //     let userTally = prompt();
+        //     if(userTally == "1"){
+        //         this.playerOne.pointChange();
+        //     }
+        //     else if(userTally == "2"){
+        //         this.playerTwo.pointChange();
+        //     }
+        //     else {
+        //         console.log("Please select either 1 or 2.  Try again!");
 
-            }
-        }
+        //     }
+        // }
      }
      declareWinner(){
          if (this.playerOne.pointTally > this.playerTwo.pointTally){
