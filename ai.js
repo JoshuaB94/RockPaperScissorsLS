@@ -6,8 +6,8 @@ class Ai extends GamePlayer{
         this.name = "Rob the Robot"
     }
     selectHandGesture(){
-        let aiSelection = Math.floor(Math.random() * this.handGestures.length);
-        console.log(this.handGestures[aiSelection]);
+        let aiSelection = this.handGestures[Math.floor(Math.random() * this.handGestures.length)];
+        console.log(aiSelection);
         return aiSelection;
     }
 }   
