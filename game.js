@@ -1,6 +1,6 @@
 const prompt = require("prompt-sync")();
 let {Robot} = require("./ai");
-const {HumanPlayer} = require("./human");
+let {HumanPlayer} = require("./human");
 
 class Game {
 
@@ -35,41 +35,100 @@ class Game {
         console.log(`${this.playerOne.name} vs ${this.playerTwo.name}... BEGIN!`);
         
         while(this.playerOne.pointTally < 3 && this.playerTwo.pointTally < 3){
-            // selectHandGesture method calls will RETURN the strings for each gesture
-            let playerOneChoice = this.playerOne.selectHandGesture();
-            let playerTwoChoice = this.playerTwo.selectHandGesture();
-            if (playerOneChoice === "Rock" && playerTwoChoice === "Lizard"){
-                this.playerOne.pointTally = this.playerOne.pointTally++;
-                return;
-            }
+
+            let playerOneGesture = this.playerOne.selectHandGesture();
+            let playerTwoGesture = this.playerTwo.selectHandGesture();
+            this.compareGestures(playerOneGesture, playerTwoGesture)
         }
+    }
 
-            // compareGestures(playerOneChoice, playerTwoChoice)
-            // compare the gestures and assign point to winner player
-            // if (playerOneChoice === "Rock" && playerTwoChoice === "Paper") ---> this.playerOne.pointTally++
+    compareGestures(playerOneChoice, playerTwoChoice){
+        //Rock Comparison
+        if(playerOneChoice === "Rock" && playerTwoChoice === "Scissors"){
+            this.playerOne.pointTally++;
+            console.log(`${this.playerOne.name} won this round!`);
+        } else if(playerTwoChoice === "Paper" && playerOneChoice === "Rock"){
+            this.playerTwo.pointTally++;
+            console.log(`${this.playerTwo.name} won this round`);
+        }
+        if(playerOneChoice === "Rock" && playerTwoChoice === "Lizard"){
+            this.playerOne.pointTally++;
+            console.log(`${this.playerOne.name} won this round!`);
+        } else if(playerTwoChoice === "Spock" && playerOneChoice === "Rock"){
+            this.playerTwo.pointTally++;
+            console.log(`${this.playerTwo.name} won this round`);
+        }
+        //Scissors Comparison
+        if(playerOneChoice === "Scissors" && playerTwoChoice === "Paper"){
+            this.playerOne.pointTally++;
+            console.log(`${this.playerOne.name} won this round!`);
+        } else if(playerTwoChoice === "Spock" && playerOneChoice === "Scissors"){
+            this.playerTwo.pointTally++;
+            console.log(`${this.playerTwo.name} won this round`);
+        }
+        if(playerOneChoice === "Scissors" && playerTwoChoice === "Lizard"){
+            this.playerOne.pointTally++;
+            console.log(`${this.playerOne.name} won this round!`);
+        } else if(playerTwoChoice === "Rock" && playerOneChoice === "Scissors"){
+            this.playerTwo.pointTally++;
+            console.log(`${this.playerTwo.name} won this round`);
+        }
+        //Paper Comparison
+        if(playerOneChoice === "Paper" && playerTwoChoice === "Rock"){
+            this.playerOne.pointTally++;
+            console.log(`${this.playerOne.name} won this round!`);
+        } else if(playerTwoChoice === "Scissors" && playerOneChoice === "Paper"){
+            this.playerTwo.pointTally++;
+            console.log(`${this.playerTwo.name} won this round`);
+        }
+        if(playerOneChoice === "Paper" && playerTwoChoice === "Spock"){
+            this.playerOne.pointTally++;
+            console.log(`${this.playerOne.name} won this round!`);
+        } else if(playerTwoChoice === "Lizard" && playerOneChoice === "Paper"){
+            this.playerTwo.pointTally++;
+            console.log(`${this.playerTwo.name} won this round`);
+        }
+        //Lizard Comparison
+        if(playerOneChoice === "Lizard" && playerTwoChoice === "Spock"){
+            this.playerOne.pointTally++;
+            console.log(`${this.playerOne.name} won this round!`);
+        } else if(playerTwoChoice === "Rock" && playerOneChoice === "Lizard"){
+            this.playerTwo.pointTally++;
+            console.log(`${this.playerTwo.name} won this round`);
+        }
+        if(playerOneChoice === "Lizard" && playerTwoChoice === "Paper"){
+            this.playerOne.pointTally++;
+            console.log(`${this.playerOne.name} won this round!`);
+        } else if(playerTwoChoice === "Scissors" && playerOneChoice === "Lizard"){
+            this.playerTwo.pointTally++;
+            console.log(`${this.playerTwo.name} won this round`);
+        }
+        //Spock Comparison
+        if(playerOneChoice === "Spock" && playerTwoChoice === "Rock"){
+            this.playerOne.pointTally++;
+            console.log(`${this.playerOne.name} won this round!`);
+        } else if(playerTwoChoice === "Paper" && playerOneChoice === "Spock"){
+            this.playerTwo.pointTally++;
+            console.log(`${this.playerTwo.name} won this round`);
+        }
+        if(playerOneChoice === "Spock" && playerTwoChoice === "Scissors"){
+            this.playerOne.pointTally++;
+            console.log(`${this.playerOne.name} won this round!`);
+        } else if(playerTwoChoice === "Lizard" && playerOneChoice === "Spock"){
+            this.playerTwo.pointTally++;
+            console.log(`${this.playerTwo.name} won this round`);
+        }
+    }
 
-        //     console.log("Who won the round? Press 1 for player one and 2 for player two");
-        //     let userTally = prompt();
-        //     if(userTally == "1"){
-        //         this.playerOne.pointChange();
-        //     }
-        //     else if(userTally == "2"){
-        //         this.playerTwo.pointChange();
-        //     }
-        //     else {
-        //         console.log("Please select either 1 or 2.  Try again!");
+    declareWinner(){
+        if (this.playerOne.pointTally > this.playerTwo.pointTally){
+            console.log(`The winner is ${this.playerOne.name}!`)
+        }
+        else {
+            console.log(`The winner is ${this.playerTwo.name}!`)
+        }
+    }
 
-        //     }
-        // }
-     }
-     declareWinner(){
-         if (this.playerOne.pointTally > this.playerTwo.pointTally){
-             console.log(`The winner is ${this.playerOne.name}!`)
-         }
-         else {
-             console.log(`The winner is ${this.playerTwo.name}!`)
-         }
-     }
     runGame(){
         this.welcomeDisplay();
         this.runRPSLS();
